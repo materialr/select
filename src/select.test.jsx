@@ -212,8 +212,8 @@ test('Destroys the MDCSelect component on unmount', () => {
   const destroy = jest.fn();
   const wrapper = mount(<Select label={LABEL} name={NAME}>{CHILDREN}</Select>);
   const instance = wrapper.instance();
-  instance.select.destroy = destroy;
   const expected = 1;
+  instance.select.destroy = destroy;
 
   wrapper.unmount();
   const actual = destroy.mock.calls.length;

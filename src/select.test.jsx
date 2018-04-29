@@ -107,7 +107,7 @@ test('Renders an empty option', () => {
     <Select label={LABEL} name={NAME} onChange={() => {}} value="">{CHILDREN}</Select>,
     { disableLifecycleMethods: true },
   );
-  const expectedClassName = 'mdc-select__label';
+  const expectedClassName = 'mdc-floating-label';
   const expectedDisabled = true;
   const expectedLabel = '';
   const expectedValue = '';
@@ -129,7 +129,7 @@ test('Renders a label with the correct classNames', () => {
     <Select label={LABEL} name={NAME}>{CHILDREN}</Select>,
     { disableLifecycleMethods: true },
   );
-  const expected = 'mdc-select__label mdc-select__label--float-above';
+  const expected = 'mdc-floating-label mdc-floating-label--float-above';
 
   const actual = wrapper.find('label').props().className;
 
@@ -143,7 +143,7 @@ test('Always renders the bottom line', () => {
   );
   const expected = true;
 
-  const actual = wrapper.find('.mdc-select__bottom-line').exists();
+  const actual = wrapper.find('.mdc-line-ripple').exists();
 
   expect(actual).toBe(expected);
 });

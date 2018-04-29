@@ -36,8 +36,8 @@ class Select extends React.Component {
   }
   getClassNamesLabel() {
     return classnames({
-      'mdc-select__label': true,
-      'mdc-select__label--float-above': !this.isEmpty(),
+      'mdc-floating-label': true,
+      'mdc-floating-label--float-above': !this.isEmpty(),
     });
   }
   getId() {
@@ -84,7 +84,7 @@ class Select extends React.Component {
         </select>
         {/* eslint-disable-next-line jsx-a11y/label-has-for */}
         <label className={getClassNamesLabel()} htmlFor={getId()}>{label}</label>
-        <div className="mdc-select__bottom-line" />
+        <div className="mdc-line-ripple" />
       </div>
     );
   }

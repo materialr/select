@@ -6,7 +6,7 @@
   "scripts": {
     "build:production": "babel src --out-dir lib --ignore **/*.test.js,**/*.test.jsx",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "lint": "eslint --ext .js .",
+    "lint": "eslint --ext .js --ext .jsx .",
     "semantic-release": "semantic-release",
     "test": "npm run lint && npm run test:vulnerabilities && npm run test:scripts",
     "test:scripts": "jest --coverage --config ./jest.config.json",
@@ -28,15 +28,15 @@
   },
   "homepage": "https://github.com/materialr/select#readme",
   "dependencies": {
-    "@material/select": "^0.34.1",
+    "@material/select": "^0.35.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1",
-    "react": "^16.3.1",
+    "react": "^16.3.2",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
     "nsp": "^3.2.1",
-    "react-dom": "^16.3.1",
+    "react-dom": "^16.3.2",
     "semantic-release": "^15.1.7"
   }
 }

@@ -33,7 +33,7 @@ test('Renders the default classNames', () => {
 test('Renders additional classNames based on props', () => {
   const CLASS_NAME = 'CLASS_NAME';
   const wrapper = shallow(
-    <Select className={CLASS_NAME} isBox label={LABEL} name={NAME}>{CHILDREN}</Select>,
+    <Select box className={CLASS_NAME} label={LABEL} name={NAME}>{CHILDREN}</Select>,
     { disableLifecycleMethods: true },
   );
   const expected = `mdc-select mdc-select--box ${CLASS_NAME}`;

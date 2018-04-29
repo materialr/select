@@ -26,11 +26,11 @@ class Select extends React.Component {
     this.select.destroy();
   }
   getClassNames() {
-    const { className, disabled, isBox } = this.props;
+    const { box, className, disabled } = this.props;
     return classnames({
       'mdc-select': true,
+      'mdc-select--box': box,
       'mdc-select--disabled': disabled,
-      'mdc-select--box': isBox,
       [className]: !!className,
     });
   }
@@ -82,6 +82,7 @@ class Select extends React.Component {
           {isEmpty() && <SelectOption disabled label="" value="" />}
           {children}
         </select>
+        {/* eslint-disable-next-line jsx-a11y/label-has-for */}
         <label className={getClassNamesLabel()} htmlFor={getId()}>{label}</label>
         <div className="mdc-select__bottom-line" />
       </div>
@@ -90,11 +91,11 @@ class Select extends React.Component {
 }
 
 Select.propTypes = {
+  box: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   id: PropTypes.string,
-  isBox: PropTypes.bool,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
@@ -106,10 +107,10 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+  box: false,
   className: undefined,
   disabled: false,
   id: undefined,
-  isBox: false,
   onBlur: undefined,
   onChange: undefined,
   onDragStart: undefined,

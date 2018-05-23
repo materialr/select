@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const SelectOption = ({ disabled, label, value }) => (
-  <option disabled={disabled} value={value}>{label}</option>
+const SelectOption = ({ disabled, label, value, ...props }) => (
+  <option disabled={disabled} value={value} {...props}>{label}</option>
 );
 
 SelectOption.propTypes = {

@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const SelectGroup = ({ children, label }) => (<optgroup label={label}>{children}</optgroup>);
+const SelectGroup = ({ children, label, ...props }) => (
+  <optgroup label={label} {...props}>{children}</optgroup>
+);
 
 SelectGroup.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,

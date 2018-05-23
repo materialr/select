@@ -220,3 +220,16 @@ test('Destroys the MDCSelect component on unmount', () => {
 
   expect(actual).toBe(expected);
 });
+
+test('Adds extra properties that are passed in', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <Select data-qa={DATA_QA} label={LABEL} name={NAME}>{CHILDREN}</Select>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});

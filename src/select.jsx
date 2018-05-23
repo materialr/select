@@ -53,8 +53,11 @@ class Select extends React.Component {
       getId,
       isEmpty,
       props: {
+        box,
         children,
+        className,
         disabled,
+        id,
         label,
         name,
         onBlur,
@@ -63,10 +66,15 @@ class Select extends React.Component {
         onDrop,
         onFocus,
         value,
+        ...props
       },
     } = this;
     return (
-      <div className={getClassNames()} ref={(elementRoot) => { this.elementRoot = elementRoot; }}>
+      <div
+        className={getClassNames()}
+        ref={(elementRoot) => { this.elementRoot = elementRoot; }}
+        {...props}
+      >
         <select
           className="mdc-select__native-control"
           disabled={disabled}
